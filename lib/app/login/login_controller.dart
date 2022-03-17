@@ -67,7 +67,8 @@ class LoginPageController extends Controller {
       usernameTextField.text = '';
       passwordTextField.text = '';
       Fluttertoast.showToast(
-        msg: 'Please register first',
+        msg:
+            'Please register first. The account with this username does not exist',
         timeInSecForIosWeb: 4,
       );
     } else if (error is UsernamePasswordMismatchException) {

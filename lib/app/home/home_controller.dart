@@ -1,4 +1,5 @@
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:login_workflow/core/presentation/use_case_observer.dart';
 
 import '../../injection.dart';
@@ -43,6 +44,7 @@ class HomePageController extends Controller {
     _presenter.logout(
       UseCaseObserver(
         () {
+          Fluttertoast.showToast(msg: 'Logged out succesfully!');
           _navigationService.navigateTo(NavigationService.signInRoute,
               shouldReplace: true);
         },

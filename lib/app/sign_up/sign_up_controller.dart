@@ -50,6 +50,7 @@ class SignUpPageController extends Controller {
 
     _presenter.signUp(
       UseCaseObserver(() {
+        Fluttertoast.showToast(msg: 'Signed up succesfully!');
         _navigationService.navigateBack();
       }, _handleErrorStates),
       username: username,
