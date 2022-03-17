@@ -1,4 +1,4 @@
-import 'package:login_workflow/app/authentication/domain/authentication_repository.dart';
+import 'package:login_workflow/app/authentication/domain/repository/authentication_repository.dart';
 import 'package:login_workflow/core/wrappers/http_request_wrapper.dart';
 import 'package:login_workflow/core/wrappers/shared_preferences_wrapper.dart';
 
