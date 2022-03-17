@@ -10,6 +10,7 @@ import 'app/authentication/domain/usecase/logout_usecase.dart';
 import 'app/authentication/domain/usecase/signup_usecase.dart';
 import 'app/authentication/domain/usecase/verify_forgot_password_code_usecase.dart';
 import 'app/home/home_presenter.dart';
+import 'app/login/forgot_password/forgot_password_presenter.dart';
 import 'app/login/login_presenter.dart';
 import 'app/navigation_service.dart';
 import 'app/sign_up/sign_up_presenter.dart';
@@ -46,6 +47,8 @@ Future<void> init() async {
   serviceLocator.registerFactory(() => SignUpPagePresenter(serviceLocator()));
 
   // Forgot Password
+  serviceLocator.registerFactory(() => ForgotPasswordPagePresenter(
+      serviceLocator(), serviceLocator(), serviceLocator()));
 
   // Home
   serviceLocator.registerFactory(
