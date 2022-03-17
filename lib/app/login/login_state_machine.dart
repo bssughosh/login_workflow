@@ -12,7 +12,7 @@ class LoginPageStateMachine extends StateMachine<LoginState?, LoginEvent> {
         break;
 
       case LoginPageErrorEvent:
-        newState = LoginPageErrorState();
+        newState = LoginPageInitializationState();
         break;
     }
     return newState;
@@ -24,8 +24,6 @@ class LoginState {}
 class LoginPageInitializationState extends LoginState {}
 
 class LoginPageLoadingState extends LoginState {}
-
-class LoginPageErrorState extends LoginState {}
 
 class LoginEvent {}
 

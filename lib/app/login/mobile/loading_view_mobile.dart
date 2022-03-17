@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
 Widget buildLoadingStateViewMobile() {
-  throw UnimplementedError();
+  return const Scaffold(
+    body: Center(
+      child: CircularProgressIndicator(),
+    ),
+  );
 }
