@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
-Widget buildLoadingStateViewWeb() {
-  throw UnimplementedError();
-}
+import '../mobile/loading_view_mobile.dart';
+
+Widget buildLoadingStateViewWeb() => buildLoadingStateViewMobile();

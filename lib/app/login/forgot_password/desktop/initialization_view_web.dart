@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget buildInitializationStateViewWeb() {
-  throw UnimplementedError();
-}
+import '../forgot_password_controller.dart';
+import '../mobile/initialization_view_mobile.dart';
+
+Widget buildInitializationStateViewWeb(
+        ForgotPasswordPageController controller) =>
+    InitializationStateViewMobile(controller: controller, isWeb: true);

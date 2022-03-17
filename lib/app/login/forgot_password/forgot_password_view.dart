@@ -29,7 +29,7 @@ class ForgotPasswordViewState extends ResponsiveViewState<ForgotPasswordPage,
 
         switch (currentStateType) {
           case ForgotPasswordPageInitializationState:
-            return buildInitializationStateViewWeb();
+            return buildInitializationStateViewWeb(controller);
 
           case ForgotPasswordPagePasswordDisplayState:
             return buildPasswordDisplayStateViewWeb();
@@ -48,10 +48,10 @@ class ForgotPasswordViewState extends ResponsiveViewState<ForgotPasswordPage,
 
         switch (currentStateType) {
           case ForgotPasswordPageInitializationState:
-            return buildInitializationStateViewMobile();
+            return InitializationStateViewMobile(controller: controller);
 
           case ForgotPasswordPagePasswordDisplayState:
-            return buildPasswordDisplayStateViewMobile();
+            return const PasswordDisplayStateViewMobile();
 
           case ForgotPasswordPageLoadingState:
             return buildLoadingStateViewMobile();
