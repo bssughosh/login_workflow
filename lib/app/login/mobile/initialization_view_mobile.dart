@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:login_workflow/app/keys.dart';
-import 'package:login_workflow/app/login/forgot_password/forgot_password_view.dart';
 
 import '../../../core/common_widgets/common_text_field.dart';
 import '../../../core/common_widgets/primary_button.dart';
 import '../../../core/common_widgets/secondary_button.dart';
 import '../../../core/constants.dart';
+import '../../keys.dart';
+import '../forgot_password/forgot_password_view.dart';
 import '../login_controller.dart';
 
 class InitializationStateViewMobile extends StatelessWidget {
