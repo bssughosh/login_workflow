@@ -39,6 +39,7 @@ class ForgotPasswordPageController extends Controller {
       UseCaseObserver(() {}, _handleErrorState,
           onNextFunction: (bool doesExist) {
         if (doesExist) {
+          _getPassword();
         } else {
           Fluttertoast.showToast(
               msg:
@@ -52,7 +53,7 @@ class ForgotPasswordPageController extends Controller {
     );
   }
 
-  void getPassword() {
+  void _getPassword() {
     _presenter.getPassword(
       UseCaseObserver(() {}, _handleErrorState,
           onNextFunction: (String password) {
