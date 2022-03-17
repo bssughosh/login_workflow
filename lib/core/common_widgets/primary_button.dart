@@ -18,6 +18,8 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       enableFeedback: !isDisabled,
+      mouseCursor:
+          isDisabled ? SystemMouseCursors.basic : SystemMouseCursors.click,
       onTap: isDisabled ? () {} : onTap,
       child: Container(
         decoration: isDisabled
@@ -27,7 +29,11 @@ class PrimaryButton extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 13,
+            color: isDisabled ? Colors.white : Colors.black,
+          ),
         ),
       ),
     );
