@@ -32,6 +32,13 @@ class InitializationStateViewMobile extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_back_ios, size: 20),
+                      onPressed: controller.navigateBack,
+                    ),
+                  ),
                   CommonTextField(
                     textEditingController: controller.usernameTextField,
                     onChanged: controller.onTextFieldChanged,
