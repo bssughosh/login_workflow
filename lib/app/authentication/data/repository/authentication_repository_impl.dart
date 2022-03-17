@@ -1,3 +1,5 @@
+import 'package:login_workflow/core/exceptions.dart';
+
 import '../../../../core/wrappers/http_request_wrapper.dart';
 import '../../domain/repository/authentication_repository.dart';
 
@@ -53,5 +55,11 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
   }
 
   @override
-  String? get loggedInUser => _loggedInUsername;
+  String get loggedInUser {
+    if (_loggedInUsername == null) {
+      throw UserNotLoggedInException();
+    }
+
+    return _loggedInUsername!;
+  }
 }

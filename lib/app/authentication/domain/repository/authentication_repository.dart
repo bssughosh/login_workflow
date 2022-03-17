@@ -11,5 +11,5 @@ abstract class AuthenticationRepository {
 
   Future<void> signUp({required String username, required String password});
 
-  String? get loggedInUser;
+  String get loggedInUser;
 }
