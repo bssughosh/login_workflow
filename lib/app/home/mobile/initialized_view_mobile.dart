@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_workflow/app/keys.dart';
 
 import '../../../core/constants.dart';
 import '../home_controller.dart';
@@ -13,6 +14,7 @@ Widget buildInitializedStateViewMobile(
     appBar: AppBar(
       actions: [
         IconButton(
+          key: Key(WidgetKeys.homePageLogoutButton.name),
           onPressed: controller.logoutUser,
           icon: const Icon(
             Icons.power_settings_new,

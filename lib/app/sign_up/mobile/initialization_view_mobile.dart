@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_workflow/app/keys.dart';
 
 import '../../../core/common_widgets/common_text_field.dart';
 import '../../../core/common_widgets/primary_button.dart';
@@ -40,17 +41,20 @@ class InitializationStateViewMobile extends StatelessWidget {
                     ),
                   ),
                   CommonTextField(
+                    key: Key(WidgetKeys.signUpPageUsernameField.name),
                     textEditingController: controller.usernameTextField,
                     onChanged: controller.onTextFieldChanged,
                     title: 'Username',
                   ),
                   CommonTextField(
+                    key: Key(WidgetKeys.signUpPagePasswordField.name),
                     textEditingController: controller.passwordTextField,
                     onChanged: controller.onTextFieldChanged,
                     title: 'Password',
                     obscureText: true,
                   ),
                   CommonTextField(
+                    key: Key(WidgetKeys.signUpPageConfirmPasswordField.name),
                     textEditingController: controller.confirmPasswordTextField,
                     onChanged: controller.onTextFieldChanged,
                     title: 'Confirm Password',
@@ -58,6 +62,7 @@ class InitializationStateViewMobile extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   PrimaryButton(
+                    key: Key(WidgetKeys.signUpPageRegisterButton.name),
                     title: 'Sign Up',
                     onTap: controller.signUp,
                     isDisabled: _isButtonDisabled,

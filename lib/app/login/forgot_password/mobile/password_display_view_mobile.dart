@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_workflow/app/keys.dart';
 
 import '../../../../core/common_widgets/primary_button.dart';
 import '../../../../core/constants.dart';
@@ -38,6 +39,7 @@ class PasswordDisplayStateViewMobile extends StatelessWidget {
                 Text(passwordDisplayState.password),
                 const SizedBox(height: 15),
                 PrimaryButton(
+                  key: Key(WidgetKeys.forgotPasswordPageDoneButton.name),
                   title: 'Done',
                   onTap: Navigator.of(context).pop,
                 ),

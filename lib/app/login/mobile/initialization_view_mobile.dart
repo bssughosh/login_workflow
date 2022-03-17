@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_workflow/app/keys.dart';
 import 'package:login_workflow/app/login/forgot_password/forgot_password_view.dart';
 
 import '../../../core/common_widgets/common_text_field.dart';
@@ -35,11 +36,13 @@ class InitializationStateViewMobile extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   CommonTextField(
+                    key: Key(WidgetKeys.loginPageUsernameField.name),
                     textEditingController: controller.usernameTextField,
                     onChanged: controller.onTextFieldChanged,
                     title: 'Username',
                   ),
                   CommonTextField(
+                    key: Key(WidgetKeys.loginPagePasswordField.name),
                     textEditingController: controller.passwordTextField,
                     onChanged: controller.onTextFieldChanged,
                     title: 'Password',
@@ -49,6 +52,7 @@ class InitializationStateViewMobile extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: InkWell(
+                      key: Key(WidgetKeys.loginPageForgotPasswordButton.name),
                       onTap: () {
                         showModalBottomSheet(
                           context: context,
@@ -69,11 +73,13 @@ class InitializationStateViewMobile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       PrimaryButton(
+                        key: Key(WidgetKeys.loginPageSignInButton.name),
                         title: 'Login',
                         onTap: controller.login,
                         isDisabled: _isButtonDisabled,
                       ),
                       SecondaryButton(
+                        key: Key(WidgetKeys.loginPageSignUpButton.name),
                         title: 'Sign Up',
                         onTap: controller.navigateToSignUp,
                       ),
