@@ -1,5 +1,4 @@
-import 'package:login_workflow/core/exceptions.dart';
-
+import '../../../../core/exceptions.dart';
 import '../../../../core/wrappers/http_request_wrapper.dart';
 import '../../domain/repository/authentication_repository.dart';
 

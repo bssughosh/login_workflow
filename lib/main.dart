@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'my_app.dart';
 import 'injection.dart' as di;
+import 'my_app.dart';
 
 Future<void> main({bool initDependencyInjection = true}) async {
   if (initDependencyInjection) {

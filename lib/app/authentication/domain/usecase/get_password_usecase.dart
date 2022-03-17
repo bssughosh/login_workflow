@@ -2,7 +2,8 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
-import 'package:login_workflow/app/authentication/domain/repository/authentication_repository.dart';
+
+import '../repository/authentication_repository.dart';
 
 class GetPasswordUsecase extends CompletableUseCase<GetPasswordParams> {
   final AuthenticationRepository _repository;
