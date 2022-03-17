@@ -25,6 +25,7 @@ class ForgotPasswordViewState extends ResponsiveViewState<ForgotPasswordPage,
   Widget get desktopView =>
       ControlledWidgetBuilder<ForgotPasswordPageController>(
           builder: (context, controller) {
+        final currentState = controller.getCurrentState();
         final currentStateType = controller.getCurrentState().runtimeType;
 
         switch (currentStateType) {
@@ -32,7 +33,9 @@ class ForgotPasswordViewState extends ResponsiveViewState<ForgotPasswordPage,
             return buildInitializationStateViewWeb(controller);
 
           case ForgotPasswordPagePasswordDisplayState:
-            return buildPasswordDisplayStateViewWeb();
+            ForgotPasswordPagePasswordDisplayState passwordDisplayState =
+                currentState as ForgotPasswordPagePasswordDisplayState;
+            return buildPasswordDisplayStateViewWeb(passwordDisplayState);
 
           case ForgotPasswordPageLoadingState:
             return buildLoadingStateViewWeb();
@@ -44,6 +47,7 @@ class ForgotPasswordViewState extends ResponsiveViewState<ForgotPasswordPage,
   Widget get mobileView =>
       ControlledWidgetBuilder<ForgotPasswordPageController>(
           builder: (context, controller) {
+        final currentState = controller.getCurrentState();
         final currentStateType = controller.getCurrentState().runtimeType;
 
         switch (currentStateType) {
@@ -51,7 +55,10 @@ class ForgotPasswordViewState extends ResponsiveViewState<ForgotPasswordPage,
             return InitializationStateViewMobile(controller: controller);
 
           case ForgotPasswordPagePasswordDisplayState:
-            return const PasswordDisplayStateViewMobile();
+            ForgotPasswordPagePasswordDisplayState passwordDisplayState =
+                currentState as ForgotPasswordPagePasswordDisplayState;
+            return PasswordDisplayStateViewMobile(
+                passwordDisplayState: passwordDisplayState);
 
           case ForgotPasswordPageLoadingState:
             return buildLoadingStateViewMobile();

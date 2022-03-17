@@ -18,7 +18,11 @@ class ForgotPasswordPageStateMachine
         break;
 
       case ForgotPasswordPagePasswordDisplayEvent:
-        newState = ForgotPasswordPagePasswordDisplayState();
+        ForgotPasswordPagePasswordDisplayEvent passwordDisplayEvent =
+            event as ForgotPasswordPagePasswordDisplayEvent;
+        newState = ForgotPasswordPagePasswordDisplayState(
+          password: passwordDisplayEvent.password,
+        );
         break;
     }
     return newState;
@@ -29,7 +33,11 @@ class ForgotPasswordState {}
 
 class ForgotPasswordPageInitializationState extends ForgotPasswordState {}
 
-class ForgotPasswordPagePasswordDisplayState extends ForgotPasswordState {}
+class ForgotPasswordPagePasswordDisplayState extends ForgotPasswordState {
+  final String password;
+
+  ForgotPasswordPagePasswordDisplayState({required this.password});
+}
 
 class ForgotPasswordPageLoadingState extends ForgotPasswordState {}
 
@@ -37,6 +45,10 @@ class ForgotPasswordEvent {}
 
 class ForgotPasswordPageLoadingEvent extends ForgotPasswordEvent {}
 
-class ForgotPasswordPagePasswordDisplayEvent extends ForgotPasswordEvent {}
+class ForgotPasswordPagePasswordDisplayEvent extends ForgotPasswordEvent {
+  final String password;
+
+  ForgotPasswordPagePasswordDisplayEvent({required this.password});
+}
 
 class ForgotPasswordPageErrorEvent extends ForgotPasswordEvent {}

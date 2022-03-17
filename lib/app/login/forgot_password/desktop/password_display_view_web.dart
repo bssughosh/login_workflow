@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../forgot_password_state_machine.dart';
 import '../mobile/password_display_view_mobile.dart';
 
-Widget buildPasswordDisplayStateViewWeb() =>
-    const PasswordDisplayStateViewMobile(isWeb: true);
+Widget buildPasswordDisplayStateViewWeb(
+        ForgotPasswordPagePasswordDisplayState passwordDisplayState) =>
+    PasswordDisplayStateViewMobile(
+      isWeb: true,
+      passwordDisplayState: passwordDisplayState,
+    );

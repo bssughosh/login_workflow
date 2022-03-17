@@ -27,6 +27,7 @@ class InitializationStateViewMobile extends StatelessWidget {
         child: Container(
           width: _containerWidth,
           decoration: kCardBoxDecoration,
+          padding: const EdgeInsets.all(15),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,

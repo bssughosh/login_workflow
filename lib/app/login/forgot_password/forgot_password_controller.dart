@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:login_workflow/core/presentation/use_case_observer.dart';
 
+import '../../../core/presentation/use_case_observer.dart';
 import '../../../injection.dart';
 import 'forgot_password_presenter.dart';
 import 'forgot_password_state_machine.dart';
@@ -47,6 +47,18 @@ class ForgotPasswordPageController extends Controller {
           _stateMachine.onEvent(ForgotPasswordPageErrorEvent());
           refreshUI();
         }
+      }),
+      username: usernameTextField.text.trim(),
+    );
+  }
+
+  void getPassword() {
+    _presenter.getPassword(
+      UseCaseObserver(() {}, _handleErrorState,
+          onNextFunction: (String password) {
+        _stateMachine.onEvent(
+            ForgotPasswordPagePasswordDisplayEvent(password: password));
+        refreshUI();
       }),
       username: usernameTextField.text.trim(),
     );
