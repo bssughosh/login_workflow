@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/common_widgets/common_text_field.dart';
 import '../../../../core/common_widgets/primary_button.dart';
 import '../../../../core/constants.dart';
+import '../../../keys.dart';
 import '../forgot_password_controller.dart';
 
 class InitializationStateViewMobile extends StatelessWidget {
@@ -33,12 +34,15 @@ class InitializationStateViewMobile extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 CommonTextField(
+                  key: Key(WidgetKeys.forgotPasswordPageUsernameField.name),
                   textEditingController: controller.usernameTextField,
                   onChanged: controller.onTextFieldChanged,
                   title: 'Username',
                   smallText: true,
                 ),
                 PrimaryButton(
+                  key: Key(
+                      WidgetKeys.forgotPasswordPageSubmitUsernameButton.name),
                   title: 'Submit',
                   onTap: controller.checkIfUserExists,
                   isDisabled: controller.usernameTextField.text.trim().isEmpty,
