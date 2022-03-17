@@ -8,6 +8,7 @@ class CommonTextField extends StatelessWidget {
   final TextInputType textInputType;
   final bool obscureText;
   final String title;
+  final bool smallText;
 
   const CommonTextField({
     Key? key,
@@ -16,6 +17,7 @@ class CommonTextField extends StatelessWidget {
     required this.title,
     this.textInputType = TextInputType.text,
     this.obscureText = false,
+    this.smallText = false,
   }) : super(key: key);
 
   @override
@@ -26,7 +28,8 @@ class CommonTextField extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: kHeadingTextStyle),
+          Text(title,
+              style: kHeadingTextStyle.copyWith(fontSize: smallText ? 16 : 25)),
           const SizedBox(height: 8),
           SizedBox(
             height: 40,

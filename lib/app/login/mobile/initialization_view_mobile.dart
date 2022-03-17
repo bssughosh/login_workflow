@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_workflow/app/login/forgot_password/forgot_password_view.dart';
 
 import '../../../core/common_widgets/common_text_field.dart';
 import '../../../core/common_widgets/primary_button.dart';
@@ -43,6 +44,24 @@ class InitializationStateViewMobile extends StatelessWidget {
                     onChanged: controller.onTextFieldChanged,
                     title: 'Password',
                     obscureText: true,
+                  ),
+                  const SizedBox(height: 10),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          backgroundColor: Colors.transparent,
+                          builder: (_) => ForgotPasswordPage(),
+                        );
+                      },
+                      child: const Text(
+                        'Forgot Password?',
+                        style: kForgotPasswordTextStyle,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 10),
                   Row(

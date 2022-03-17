@@ -34,3 +34,10 @@ const TextStyle kHeadingTextStyle = TextStyle(
   fontSize: 25,
   color: Colors.black,
 );
+
+const TextStyle kForgotPasswordTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 16,
+  color: kDarkAccentColor,
+  decoration: TextDecoration.underline,
+);
