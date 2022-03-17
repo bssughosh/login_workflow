@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'app/navigation_service.dart';
+import 'injection.dart' as di;
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -20,6 +23,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      initialRoute: NavigationService.signInRoute,
+      onGenerateRoute: NavigationService.generateRoute,
+      navigatorKey: di.serviceLocator<NavigationService>().navigatorKey,
       debugShowCheckedModeBanner: false,
     );
   }
