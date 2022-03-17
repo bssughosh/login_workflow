@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'home/home_view.dart';
 import 'login/login_view.dart';
 import 'sign_up/sign_up_view.dart';
 
@@ -21,7 +22,7 @@ class NavigationService {
         return MaterialPageRoute(builder: (_) => SignUpPage());
 
       case homeRoute:
-        return null;
+        return MaterialPageRoute(builder: (_) => HomePage());
 
       case '/':
         // don't generate route on start-up

@@ -9,6 +9,7 @@ import 'app/authentication/domain/usecase/login_usecase.dart';
 import 'app/authentication/domain/usecase/logout_usecase.dart';
 import 'app/authentication/domain/usecase/signup_usecase.dart';
 import 'app/authentication/domain/usecase/verify_forgot_password_code_usecase.dart';
+import 'app/home/home_presenter.dart';
 import 'app/login/login_presenter.dart';
 import 'app/navigation_service.dart';
 import 'app/sign_up/sign_up_presenter.dart';
@@ -47,6 +48,8 @@ Future<void> init() async {
   // Forgot Password
 
   // Home
+  serviceLocator.registerFactory(
+      () => HomePagePresenter(serviceLocator(), serviceLocator()));
 }
 
 Future<void> reset() async {
