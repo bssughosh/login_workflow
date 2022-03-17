@@ -17,6 +17,9 @@ Future<void> signInIntegrationTestOrchestrator(
   await tester.enterText(passwordFormField, password);
   await tester.pumpAndSettle();
 
+  await tester.testTextInput.receiveAction(TextInputAction.done);
+  await tester.pumpAndSettle();
+
   await tester.tap(loginButton);
   await tester.pumpAndSettle();
 

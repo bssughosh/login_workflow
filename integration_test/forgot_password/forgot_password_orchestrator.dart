@@ -14,6 +14,9 @@ Future<void> forgotPasswordIntegrationTestOrchestrator(
   await tester.enterText(usernameFormField, username);
   await tester.pumpAndSettle();
 
+  await tester.testTextInput.receiveAction(TextInputAction.done);
+  await tester.pumpAndSettle();
+
   await tester.tap(submitUsernameButton);
   await tester.pumpAndSettle();
 
