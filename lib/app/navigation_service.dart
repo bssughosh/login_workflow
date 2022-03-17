@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login/login_view.dart';
+
 class NavigationService {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -7,18 +9,25 @@ class NavigationService {
 
   static const String signUpRoute = "/signUp";
 
-  static const String forgotPasswordRoute = "/forgotPassword";
-
   static const String homeRoute = "/home";
 
   static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case signInRoute:
+        return MaterialPageRoute(builder: (_) => LoginPage());
+
+      case signUpRoute:
+        return null;
+
+      case homeRoute:
+        return null;
+
       case '/':
         // don't generate route on start-up
         return null;
 
       default:
-        return null;
+        return MaterialPageRoute(builder: (_) => LoginPage());
     }
   }
 
