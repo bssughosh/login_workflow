@@ -17,7 +17,7 @@ Future<void> init() async {
 
   // Authentication
   serviceLocator.registerLazySingleton<AuthenticationRepository>(
-      () => AuthenticationRepositoryImpl(serviceLocator(), serviceLocator()));
+      () => AuthenticationRepositoryImpl(serviceLocator()));
 
   // Login
 

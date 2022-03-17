@@ -1,52 +1,55 @@
-import 'package:login_workflow/app/authentication/domain/repository/authentication_repository.dart';
-import 'package:login_workflow/core/wrappers/http_request_wrapper.dart';
-import 'package:login_workflow/core/wrappers/shared_preferences_wrapper.dart';
+import '../../../../core/wrappers/http_request_wrapper.dart';
+import '../../domain/repository/authentication_repository.dart';
 
 class AuthenticationRepositoryImpl extends AuthenticationRepository {
   final HttpRequestWrapper _httpRequestWrapper;
-  final SharedPreferencesWrapper _sharedPreferencesWrapper;
 
-  AuthenticationRepositoryImpl(
-    this._httpRequestWrapper,
-    this._sharedPreferencesWrapper,
-  );
+  AuthenticationRepositoryImpl(this._httpRequestWrapper);
 
   String? _loggedInUsername;
+  String? _forgotPasswordCode;
 
   @override
-  Future<String> getForgotPasswordCode() {
-    // TODO: implement getForgotPasswordCode
-    throw UnimplementedError();
+  Future<String> getForgotPasswordCode() async {
+    _forgotPasswordCode = await _httpRequestWrapper.getForgotPasswordCode();
+
+    return _forgotPasswordCode!;
   }
 
   @override
-  Future<void> login({required String username, required String password}) {
-    // TODO: implement login
-    throw UnimplementedError();
+  Future<void> login({
+    required String username,
+    required String password,
+  }) async {
+    await _httpRequestWrapper.login(username: username, password: password);
+
+    _loggedInUsername = username;
   }
 
   @override
-  Future<void> logout() {
-    // TODO: implement logout
-    throw UnimplementedError();
+  Future<void> logout() async {
+    _loggedInUsername = null;
   }
 
   @override
-  Future<void> resetPassword() {
-    // TODO: implement resetPassword
-    throw UnimplementedError();
+  Future<String> getPassword({required String username}) async {
+    _forgotPasswordCode = null;
+    return await _httpRequestWrapper.getPassword(username: username);
   }
 
   @override
-  Future<void> signUp({required String username, required String password}) {
-    // TODO: implement signUp
-    throw UnimplementedError();
+  Future<void> signUp(
+      {required String username, required String password}) async {
+    await _httpRequestWrapper.signUp(username: username, password: password);
   }
 
   @override
-  Future<bool> verifyForgotPasswordCode() {
-    // TODO: implement verifyForgotPasswordCode
-    throw UnimplementedError();
+  Future<bool> verifyForgotPasswordCode({required String enteredCode}) async {
+    if (_forgotPasswordCode == enteredCode) {
+      return true;
+    }
+
+    return false;
   }
 
   @override

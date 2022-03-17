@@ -17,7 +17,8 @@ class SharedPreferencesWrapper {
 
     final String? _password = _prefs.getString(uniqueId);
     if (_password == null) {
-      throw UsernamePasswordMismatchException();
+      // This case should not occur
+      throw UserNotRegisteredException();
     }
 
     if (password != _password) {
@@ -44,5 +45,22 @@ class SharedPreferencesWrapper {
     await _prefs.setString(username, _uniqueId);
 
     await _prefs.setString(_uniqueId, password);
+  }
+
+  Future<String> getPasswordForUsername({required String username}) async {
+    final SharedPreferences _prefs = await SharedPreferences.getInstance();
+
+    final String? uniqueId = _prefs.getString(username);
+    if (uniqueId == null) {
+      throw UserNotRegisteredException();
+    }
+
+    final String? _password = _prefs.getString(uniqueId);
+    if (_password == null) {
+      // This case should not occur
+      throw UserNotRegisteredException();
+    }
+
+    return _password;
   }
 }

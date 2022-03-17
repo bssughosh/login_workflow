@@ -23,7 +23,11 @@ class HttpRequestWrapper {
     return "123456";
   }
 
-  Future<void> resetPassword() async {}
+  Future<String> getPassword({required String username}) async {
+    return await _sharedPreferencesWrapper.getPasswordForUsername(
+      username: username,
+    );
+  }
 
   Future<void> signUp({
     required String username,
