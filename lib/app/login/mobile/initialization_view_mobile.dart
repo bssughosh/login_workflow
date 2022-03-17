@@ -21,11 +21,13 @@ class InitializationStateViewMobile extends StatelessWidget {
     final double _containerWidth = isWeb ? _screenWidth * 0.5 : double.infinity;
 
     return Scaffold(
+      backgroundColor: kDarkAccentColor,
       body: SafeArea(
-        child: Container(
-          width: _containerWidth,
-          decoration: kCardBoxDecoration,
-          child: Center(
+        child: Center(
+          child: Container(
+            width: _containerWidth,
+            decoration: kCardBoxDecoration,
+            padding: const EdgeInsets.all(20),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,

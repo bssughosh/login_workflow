@@ -59,11 +59,14 @@ class LoginPageController extends Controller {
     refreshUI();
 
     if (error is UserNotRegisteredException) {
+      usernameTextField.text = '';
+      passwordTextField.text = '';
       Fluttertoast.showToast(
         msg: 'Please register first',
         timeInSecForIosWeb: 4,
       );
     } else if (error is UsernamePasswordMismatchException) {
+      passwordTextField.text = '';
       Fluttertoast.showToast(
         msg: 'Username and password are not matching',
         timeInSecForIosWeb: 4,

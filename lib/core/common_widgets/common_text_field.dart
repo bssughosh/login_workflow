@@ -38,10 +38,10 @@ class CommonTextField extends StatelessWidget {
                 hintText: title,
                 contentPadding: const EdgeInsets.all(10.0),
                 border: const OutlineInputBorder(),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Color(0xFFE7E9E9)),
-                  borderRadius: BorderRadius.circular(5),
-                ),
+                // enabledBorder: OutlineInputBorder(
+                //   borderSide: const BorderSide(color: Color(0xFFE7E9E9)),
+                //   borderRadius: BorderRadius.circular(5),
+                // ),
               ),
             ),
           ),
