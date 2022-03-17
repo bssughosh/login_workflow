@@ -8,9 +8,16 @@ class HttpRequestWrapper {
   Future<void> login({
     required String username,
     required String password,
-  }) async {}
+  }) async {
+    await _sharedPreferencesWrapper.login(
+      username: username,
+      password: password,
+    );
+  }
 
-  Future<void> logout() async {}
+  Future<void> logout() async {
+    return;
+  }
 
   Future<String> getForgotPasswordCode() async {
     return "123456";
@@ -21,5 +28,10 @@ class HttpRequestWrapper {
   Future<void> signUp({
     required String username,
     required String password,
-  }) async {}
+  }) async {
+    await _sharedPreferencesWrapper.signUp(
+      username: username,
+      password: password,
+    );
+  }
 }
