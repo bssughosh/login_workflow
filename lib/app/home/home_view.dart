@@ -33,7 +33,9 @@ class HomeViewState extends ResponsiveViewState<HomePage, HomePageController> {
             return buildInitializationStateViewWeb(controller);
 
           case HomePageInitializedState:
-            return buildInitializedStateViewWeb();
+            HomePageInitializedState initializedState =
+                currentState as HomePageInitializedState;
+            return buildInitializedStateViewWeb(controller, initializedState);
 
           case HomePageLoadingState:
             return buildLoadingStateViewWeb();
@@ -55,7 +57,10 @@ class HomeViewState extends ResponsiveViewState<HomePage, HomePageController> {
             return buildInitializationStateViewMobile(controller);
 
           case HomePageInitializedState:
-            return buildInitializedStateViewMobile();
+            HomePageInitializedState initializedState =
+                currentState as HomePageInitializedState;
+            return buildInitializedStateViewMobile(
+                controller, initializedState);
 
           case HomePageLoadingState:
             return buildLoadingStateViewMobile();

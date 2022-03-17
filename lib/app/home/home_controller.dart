@@ -36,6 +36,21 @@ class HomePageController extends Controller {
     );
   }
 
+  void logoutUser() {
+    _stateMachine.onEvent(HomePageLoadingEvent());
+    refreshUI();
+
+    _presenter.logout(
+      UseCaseObserver(
+        () {
+          _navigationService.navigateTo(NavigationService.signInRoute,
+              shouldReplace: true);
+        },
+        _handleErrorState,
+      ),
+    );
+  }
+
   void _handleErrorState(error) {
     _stateMachine.onEvent(HomePageErrorEvent());
     refreshUI();

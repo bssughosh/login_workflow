@@ -48,7 +48,12 @@ class LoginPageController extends Controller {
     final String password = passwordTextField.text;
 
     _presenter.login(
-      UseCaseObserver(() {}, _handleErrorStates),
+      UseCaseObserver(() {
+        _navigationService.navigateTo(
+          NavigationService.homeRoute,
+          shouldReplace: true,
+        );
+      }, _handleErrorStates),
       username: username,
       password: password,
     );
