@@ -10,7 +10,8 @@ final serviceLocator = GetIt.instance;
 
 Future<void> init() async {
   // Wrappers
-  serviceLocator.registerLazySingleton(() => HttpRequestWrapper());
+  serviceLocator
+      .registerLazySingleton(() => HttpRequestWrapper(serviceLocator()));
   serviceLocator.registerLazySingleton(() => SharedPreferencesWrapper());
   serviceLocator.registerLazySingleton(() => NavigationService());
 
