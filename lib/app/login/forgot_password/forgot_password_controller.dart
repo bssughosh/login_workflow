@@ -12,11 +12,9 @@ class ForgotPasswordPageController extends Controller {
   final ForgotPasswordPageStateMachine _stateMachine =
       ForgotPasswordPageStateMachine();
   final TextEditingController usernameTextField;
-  final TextEditingController codeTextField;
   ForgotPasswordPageController()
       : _presenter = serviceLocator<ForgotPasswordPagePresenter>(),
         usernameTextField = TextEditingController(text: ''),
-        codeTextField = TextEditingController(text: ''),
         super();
 
   @override
@@ -26,7 +24,6 @@ class ForgotPasswordPageController extends Controller {
   void onDisposed() {
     _presenter.dispose();
     usernameTextField.dispose();
-    codeTextField.dispose();
     super.onDisposed();
   }
 
@@ -42,7 +39,6 @@ class ForgotPasswordPageController extends Controller {
       UseCaseObserver(() {}, _handleErrorState,
           onNextFunction: (bool doesExist) {
         if (doesExist) {
-          getResetCode();
         } else {
           Fluttertoast.showToast(
               msg:
@@ -54,11 +50,6 @@ class ForgotPasswordPageController extends Controller {
       }),
       username: usernameTextField.text.trim(),
     );
-  }
-
-  void getResetCode() {
-    _presenter.getResetCode(UseCaseObserver(() {}, _handleErrorState,
-        onNextFunction: (String code) {}));
   }
 
   void _handleErrorState(error) {

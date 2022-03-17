@@ -49,8 +49,8 @@ Future<void> init() async {
   serviceLocator.registerFactory(() => SignUpPagePresenter(serviceLocator()));
 
   // Forgot Password
-  serviceLocator.registerFactory(() => ForgotPasswordPagePresenter(
-      serviceLocator(), serviceLocator(), serviceLocator(), serviceLocator()));
+  serviceLocator.registerFactory(
+      () => ForgotPasswordPagePresenter(serviceLocator(), serviceLocator()));
 
   // Home
   serviceLocator.registerFactory(
