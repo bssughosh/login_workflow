@@ -1,8 +1,9 @@
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
-import 'package:login_workflow/app/authentication/domain/usecase/get_forgot_password_code_usecase.dart';
-import 'package:login_workflow/app/authentication/domain/usecase/get_password_usecase.dart';
-import 'package:login_workflow/app/authentication/domain/usecase/verify_forgot_password_code_usecase.dart';
-import 'package:login_workflow/core/presentation/use_case_observer.dart';
+
+import '../../../core/presentation/use_case_observer.dart';
+import '../../authentication/domain/usecase/get_forgot_password_code_usecase.dart';
+import '../../authentication/domain/usecase/get_password_usecase.dart';
+import '../../authentication/domain/usecase/verify_forgot_password_code_usecase.dart';
 
 class ForgotPasswordPagePresenter extends Presenter {
   final GetForgotPasswordCodeUsecase _getForgotPasswordCodeUsecase;

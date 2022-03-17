@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:login_workflow/core/common_widgets/secondary_button.dart';
 
 import '../../../core/common_widgets/common_text_field.dart';
 import '../../../core/common_widgets/primary_button.dart';
+import '../../../core/common_widgets/secondary_button.dart';
 import '../../../core/constants.dart';
 import '../login_controller.dart';
 

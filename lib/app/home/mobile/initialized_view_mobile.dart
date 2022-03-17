@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_workflow/core/constants.dart';
 
+import '../../../core/constants.dart';
 import '../home_controller.dart';
 import '../home_state_machine.dart';
 

@@ -1,7 +1,8 @@
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
-import 'package:login_workflow/app/authentication/domain/usecase/get_logged_in_user_usecase.dart';
-import 'package:login_workflow/app/authentication/domain/usecase/logout_usecase.dart';
-import 'package:login_workflow/core/presentation/use_case_observer.dart';
+
+import '../../core/presentation/use_case_observer.dart';
+import '../authentication/domain/usecase/get_logged_in_user_usecase.dart';
+import '../authentication/domain/usecase/logout_usecase.dart';
 
 class HomePagePresenter extends Presenter {
   final LogoutUsecase _logoutUsecase;

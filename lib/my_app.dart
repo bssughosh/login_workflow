@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:login_workflow/core/constants.dart';
 
 import 'app/navigation_service.dart';
+import 'core/constants.dart';
 import 'injection.dart' as di;
 
 class MyApp extends StatelessWidget {

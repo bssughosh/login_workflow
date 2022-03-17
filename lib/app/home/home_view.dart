@@ -5,12 +5,12 @@ import 'desktop/error_view_web.dart';
 import 'desktop/initialization_view_web.dart';
 import 'desktop/initialized_view_web.dart';
 import 'desktop/loading_view_web.dart';
+import 'home_controller.dart';
+import 'home_state_machine.dart';
 import 'mobile/error_view_mobile.dart';
 import 'mobile/initialization_view_mobile.dart';
 import 'mobile/initialized_view_mobile.dart';
 import 'mobile/loading_view_mobile.dart';
-import 'home_controller.dart';
-import 'home_state_machine.dart';
 
 class HomePage extends View {
   HomePage({Key? key}) : super(key: key);
