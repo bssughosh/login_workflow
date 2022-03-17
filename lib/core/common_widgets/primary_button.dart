@@ -31,7 +31,7 @@ class PrimaryButton extends StatelessWidget {
           textAlign: TextAlign.center,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 13,
+            fontSize: 14,
             color: isDisabled ? Colors.white : Colors.black,
           ),
         ),
