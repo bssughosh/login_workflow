@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'login/login_view.dart';
+import 'sign_up/sign_up_view.dart';
 
 class NavigationService {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -17,7 +18,7 @@ class NavigationService {
         return MaterialPageRoute(builder: (_) => LoginPage());
 
       case signUpRoute:
-        return null;
+        return MaterialPageRoute(builder: (_) => SignUpPage());
 
       case homeRoute:
         return null;

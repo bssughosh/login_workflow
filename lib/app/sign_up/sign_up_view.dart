@@ -26,7 +26,7 @@ class SignUpViewState
 
         switch (currentStateType) {
           case SignUpPageInitializationState:
-            return buildInitializationStateViewWeb();
+            return buildInitializationStateViewWeb(controller);
 
           case SignUpPageLoadingState:
             return buildLoadingStateViewWeb();
@@ -41,7 +41,7 @@ class SignUpViewState
 
         switch (currentStateType) {
           case SignUpPageInitializationState:
-            return buildInitializationStateViewMobile();
+            return InitializationStateViewMobile(controller: controller);
 
           case SignUpPageLoadingState:
             return buildLoadingStateViewMobile();

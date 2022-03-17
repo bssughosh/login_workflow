@@ -23,6 +23,11 @@ final BoxDecoration kPrimaryDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(10),
 );
 
+final BoxDecoration kSecondaryDecoration = BoxDecoration(
+  color: kDarkAccentColor,
+  borderRadius: BorderRadius.circular(10),
+);
+
 // TextStyles
 const TextStyle kHeadingTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
