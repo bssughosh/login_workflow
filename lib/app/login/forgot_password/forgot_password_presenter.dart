@@ -1,6 +1,7 @@
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
 import '../../../core/presentation/use_case_observer.dart';
+import '../../authentication/domain/usecase/does_user_exist_usecase.dart';
 import '../../authentication/domain/usecase/get_forgot_password_code_usecase.dart';
 import '../../authentication/domain/usecase/get_password_usecase.dart';
 import '../../authentication/domain/usecase/verify_forgot_password_code_usecase.dart';
@@ -9,15 +10,21 @@ class ForgotPasswordPagePresenter extends Presenter {
   final GetForgotPasswordCodeUsecase _getForgotPasswordCodeUsecase;
   final VerifyForgotPasswordCodeUsecase _verifyForgotPasswordCodeUsecase;
   final GetPasswordUsecase _getPasswordUsecase;
+  final DoesUserExistUsecase _doesUserExistUsecase;
 
-  ForgotPasswordPagePresenter(this._getForgotPasswordCodeUsecase,
-      this._verifyForgotPasswordCodeUsecase, this._getPasswordUsecase);
+  ForgotPasswordPagePresenter(
+    this._getForgotPasswordCodeUsecase,
+    this._verifyForgotPasswordCodeUsecase,
+    this._getPasswordUsecase,
+    this._doesUserExistUsecase,
+  );
 
   @override
   dispose() {
     _getForgotPasswordCodeUsecase.dispose();
     _getPasswordUsecase.dispose();
     _verifyForgotPasswordCodeUsecase.dispose();
+    _doesUserExistUsecase.dispose();
   }
 
   void getResetCode(UseCaseObserver observer) =>
@@ -29,4 +36,7 @@ class ForgotPasswordPagePresenter extends Presenter {
 
   void getPassword(UseCaseObserver observer, {required String username}) =>
       _getPasswordUsecase.execute(observer, GetPasswordParams(username));
+
+  void doesUserExist(UseCaseObserver observer, {required String username}) =>
+      _doesUserExistUsecase.execute(observer, DoesUserExistParams(username));
 }

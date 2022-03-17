@@ -61,4 +61,9 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
 
     return _loggedInUsername!;
   }
+
+  @override
+  Future<bool> doesUsernameExist({required String username}) async {
+    return await _httpRequestWrapper.doesUserExist(username: username);
+  }
 }

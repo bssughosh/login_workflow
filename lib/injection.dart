@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 
 import 'app/authentication/data/repository/authentication_repository_impl.dart';
 import 'app/authentication/domain/repository/authentication_repository.dart';
+import 'app/authentication/domain/usecase/does_user_exist_usecase.dart';
 import 'app/authentication/domain/usecase/get_forgot_password_code_usecase.dart';
 import 'app/authentication/domain/usecase/get_logged_in_user_usecase.dart';
 import 'app/authentication/domain/usecase/get_password_usecase.dart';
@@ -39,6 +40,7 @@ Future<void> init() async {
   serviceLocator.registerFactory(() => SignUpUsecase(serviceLocator()));
   serviceLocator
       .registerFactory(() => VerifyForgotPasswordCodeUsecase(serviceLocator()));
+  serviceLocator.registerFactory(() => DoesUserExistUsecase(serviceLocator()));
 
   // Login
   serviceLocator.registerFactory(() => LoginPagePresenter(serviceLocator()));
@@ -48,7 +50,7 @@ Future<void> init() async {
 
   // Forgot Password
   serviceLocator.registerFactory(() => ForgotPasswordPagePresenter(
-      serviceLocator(), serviceLocator(), serviceLocator()));
+      serviceLocator(), serviceLocator(), serviceLocator(), serviceLocator()));
 
   // Home
   serviceLocator.registerFactory(

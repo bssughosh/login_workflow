@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
-import 'desktop/error_view_web.dart';
 import 'desktop/initialization_view_web.dart';
 import 'desktop/loading_view_web.dart';
 import 'forgot_password_controller.dart';
 import 'forgot_password_state_machine.dart';
-import 'mobile/error_view_mobile.dart';
 import 'mobile/initialization_view_mobile.dart';
 import 'mobile/loading_view_mobile.dart';
 
@@ -34,9 +32,6 @@ class ForgotPasswordViewState extends ResponsiveViewState<ForgotPasswordPage,
 
           case ForgotPasswordPageLoadingState:
             return buildLoadingStateViewWeb();
-
-          case ForgotPasswordPageErrorState:
-            return buildErrorStateViewWeb();
         }
         throw Exception("Unrecognized state $currentStateType encountered");
       });
@@ -54,9 +49,6 @@ class ForgotPasswordViewState extends ResponsiveViewState<ForgotPasswordPage,
 
           case ForgotPasswordPageLoadingState:
             return buildLoadingStateViewMobile();
-
-          case ForgotPasswordPageErrorState:
-            return buildErrorStateViewMobile();
         }
         throw Exception("Unrecognized state $currentStateType encountered");
       });

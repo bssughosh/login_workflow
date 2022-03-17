@@ -29,6 +29,10 @@ class HttpRequestWrapper {
     );
   }
 
+  Future<bool> doesUserExist({required String username}) async {
+    return await _sharedPreferencesWrapper.doesUserExist(username: username);
+  }
+
   Future<void> signUp({
     required String username,
     required String password,

@@ -63,4 +63,10 @@ class SharedPreferencesWrapper {
 
     return _password;
   }
+
+  Future<bool> doesUserExist({required String username}) async {
+    final SharedPreferences _prefs = await SharedPreferences.getInstance();
+
+    return _prefs.containsKey(username);
+  }
 }

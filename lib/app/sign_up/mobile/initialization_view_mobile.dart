@@ -72,11 +72,12 @@ class InitializationStateViewMobile extends StatelessWidget {
   }
 
   bool get _isButtonDisabled {
-    final bool _isEmailEmpty = controller.usernameTextField.text.isEmpty;
-    final bool _isPasswordsEmpty = controller.passwordTextField.text.isEmpty ||
-        controller.confirmPasswordTextField.text.isEmpty;
+    final bool _isEmailEmpty = controller.usernameTextField.text.trim().isEmpty;
+    final bool _isPasswordsEmpty =
+        controller.passwordTextField.text.trim().isEmpty ||
+            controller.confirmPasswordTextField.text.trim().isEmpty;
     final bool _arePasswordsMismatched = controller.passwordTextField.text !=
-        controller.confirmPasswordTextField.text;
+        controller.confirmPasswordTextField.text.trim();
 
     return _isEmailEmpty || _isPasswordsEmpty || _arePasswordsMismatched;
   }

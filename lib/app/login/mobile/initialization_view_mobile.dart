@@ -70,6 +70,6 @@ class InitializationStateViewMobile extends StatelessWidget {
   }
 
   bool get _isButtonDisabled =>
-      controller.usernameTextField.text.isEmpty ||
-      controller.passwordTextField.text.isEmpty;
+      controller.usernameTextField.text.trim().isEmpty ||
+      controller.passwordTextField.text.trim().isEmpty;
 }

@@ -44,8 +44,8 @@ class LoginPageController extends Controller {
     _stateMachine.onEvent(LoginPageLoadingEvent());
     refreshUI();
 
-    final String username = usernameTextField.text;
-    final String password = passwordTextField.text;
+    final String username = usernameTextField.text.trim();
+    final String password = passwordTextField.text.trim();
 
     _presenter.login(
       UseCaseObserver(() {

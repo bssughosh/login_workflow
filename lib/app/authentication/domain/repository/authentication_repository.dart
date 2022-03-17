@@ -7,6 +7,8 @@ abstract class AuthenticationRepository {
 
   Future<bool> verifyForgotPasswordCode({required String enteredCode});
 
+  Future<bool> doesUsernameExist({required String username});
+
   Future<String> getPassword({required String username});
 
   Future<void> signUp({required String username, required String password});
